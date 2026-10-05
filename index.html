@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Am Sorry ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Segoe UI", sans-serif;
+
+            background:
+                radial-gradient(circle at 20% 20%, #ff8fab55, transparent 30%),
+                radial-gradient(circle at 80% 80%, #a78bfa55, transparent 30%),
+                linear-gradient(135deg, #16001f, #4a123c, #16001f);
+        }
+
+        /* Glass Card */
+        .card {
+            position: relative;
+            width: 550px;
+            height: 330px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 35px;
+
+            background: rgba(255, 255, 255, 0.10);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 25px 70px rgba(0, 0, 0, 0.5),
+                inset 0 0 30px rgba(255, 255, 255, 0.05);
+
+            animation: cardFloat 4s ease-in-out infinite;
+        }
+
+        /* Main Text */
+        h1 {
+            font-size: 70px;
+            color: white;
+            letter-spacing: 3px;
+
+            text-shadow:
+                0 0 10px #ff6b9a,
+                0 0 25px #ff6b9a,
+                0 0 50px #ff357f;
+
+            animation: textGlow 2s ease-in-out infinite alternate;
+        }
+
+        /* Heart */
+        .heart {
+            position: absolute;
+            top: -45px;
+            font-size: 70px;
+
+            animation: heartbeat 1.2s infinite;
+            filter: drop-shadow(0 0 15px #ff4f81);
+        }
+
+        /* Floating Hearts */
+        .floating-heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 25px;
+            opacity: 0;
+
+            animation: rise 7s linear infinite;
+        }
+
+        .h1 { left: 10%; animation-delay: 0s; }
+        .h2 { left: 25%; animation-delay: 2s; }
+        .h3 { left: 45%; animation-delay: 4s; }
+        .h4 { left: 65%; animation-delay: 1s; }
+        .h5 { left: 85%; animation-delay: 3s; }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background: white;
+            border-radius: 50%;
+
+            box-shadow: 0 0 15px white;
+            animation: twinkle 2s infinite alternate;
+        }
+
+        .s1 { top: 15%; left: 15%; }
+        .s2 { top: 25%; left: 85%; animation-delay: .5s; }
+        .s3 { top: 75%; left: 10%; animation-delay: 1s; }
+        .s4 { top: 80%; left: 90%; animation-delay: 1.5s; }
+        .s5 { top: 10%; left: 50%; animation-delay: .8s; }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes textGlow {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.06);
+            }
+        }
+
+        @keyframes cardFloat {
+            0%, 100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            20% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes twinkle {
+            from {
+                opacity: 0.2;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 600px) {
+            .card {
+                width: 90%;
+                height: 280px;
+            }
+
+            h1 {
+                font-size: 45px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Stars -->
+    <div class="star s1"></div>
+    <div class="star s2"></div>
+    <div class="star s3"></div>
+    <div class="star s4"></div>
+    <div class="star s5"></div>
+
+    <!-- Floating Hearts -->
+    <div class="floating-heart h1">❤️</div>
+    <div class="floating-heart h2">💗</div>
+    <div class="floating-heart h3">💕</div>
+    <div class="floating-heart h4">💖</div>
+    <div class="floating-heart h5">❤️</div>
+
+    <!-- Main Card -->
+    <div class="card">
+
+        <div class="heart">❤️</div>
+
+        <h1>I Am Sorry</h1>
+
+    </div>
+
+</body>
+</html>
